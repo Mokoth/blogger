@@ -1,0 +1,22 @@
+{%extends 'base.html'%}
+
+{%block content%}
+<div class="single_post">
+  <div class="single_post-content">
+    <img src="{{post['url_img']}}" alt="">
+    <div class="user">
+      <img src="{{post['url_img']}}" alt="">
+      <div class="info">
+        <span>Noble</span>
+        <p>Posted 2 days ago</p>
+      </div>
+    </div>
+    <h1>{{post['title']}}</h1>
+    <p>{{post['desc']}}</p>
+    <p>{{post['desc']}}</p>
+  </div>
+  <div class="single_post-menu">
+    Menu
+  </div>
+</div>
+{%endblock%}

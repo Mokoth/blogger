@@ -1,0 +1,24 @@
+{%extends 'base.html'%}
+
+{%block title%}Home page{%endblock%}
+
+{%block content%}
+<div class="home">
+  <div class="posts">
+    {%for post in posts%}
+    <div class="post">
+      <div class="post-image">
+        <img src="{{post['url_img']}}" alt="">
+      </div>
+      <div class="post-content">
+        <a href="">
+          <h1>{{post['title']}}</h1>
+        </a>
+        <p>{{post['desc']}}</p>
+        <button>Read more</button>
+      </div>
+    </div>
+    {%endfor%}
+  </div>
+</div>
+{%endblock%}

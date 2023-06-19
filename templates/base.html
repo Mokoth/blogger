@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{%block title%}{%endblock%} - Blogger</title>
+  <link rel="stylesheet" href="{{url_for('static', filename='style.css')}}">
+</head>
+<body>
+  <div class="app">
+    <div class="container">
+
+      <!-- Navbar -->
+      <div class="navbar">
+        <div class="container">
+          <div class="logo">
+            <a href="{{url_for('home')}}"><img src="{{url_for('static', filename='img/logo.png')}}"
+                alt="Noble simple logo"></a>
+          </div>
+          <div class="links">
+            <ul>
+              <li class="link"><a href="url_for('')">ART</a></li>
+              <li class="link"><a href="url_for('')">SCIENCE</a></li>
+              <li class="link"><a href="url_for('')">TECHNOLOGY</a></li>
+              <li class="link"><a href="url_for('')">CINEMA</a></li>
+              <li class="link"><a href="url_for('')">DESIGN</a></li>
+              <li class="link"><a href="url_for('')">FOOD</a></li>
+            </ul>
+            <span>Noble</span>
+            <span>Logout</span>
+            <span class="write"><a href="{{url_for('write')}}">Write</a></span>
+          </div>
+        </div>
+      </div>
+      {%block content%}
+
+      {%endblock%}
+
+      <!-- Footer -->
+      <footer>
+        <img src="{{url_for('static', filename='/img/logo.png')}}" alt="">
+        <span>Made by Noble@2023</span>
+      </footer>
+    </div>
+  </div>
+</body>
+</html>
