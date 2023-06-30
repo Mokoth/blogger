@@ -1,28 +1,28 @@
 from flask import Flask, url_for, redirect, render_template 
 from flask import abort, request
-from flask_sqlalchemy import SQLAlchemy
-from sqlalchemy.sql import func
-import os
+# from flask_sqlalchemy import SQLAlchemy
+# from sqlalchemy.sql import func
+# import os
 
-basedir = os.path.abspath(os.path.dirname(__file__))
+# basedir = os.path.abspath(os.path.dirname(__file__))
 
 app = Flask(__name__)
 
-app.config['SQLALCHEMY_DATABASE_URI'] =\
-  'sqlite:///' + os.path.join(basedir, 'database.db')
+# app.config['SQLALCHEMY_DATABASE_URI'] =\
+#   'sqlite:///' + os.path.join(basedir, 'database.db')
 
-app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
+# app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 
-db = SQLAlchemy(app)
+# db = SQLAlchemy(app)
 
 # User Model
-class User(db.Model):
-  id = db.Column(db.Integer, primary_key=True)
-  username = db.Column(db.String(50), nullable=False)
-  password = db.Column(db.String(80), nullable=False)
+# class User(db.Model):
+#   id = db.Column(db.Integer, primary_key=True)
+#   username = db.Column(db.String(50), nullable=False)
+#   password = db.Column(db.String(80), nullable=False)
 
-  def __repr__(self):
-    return f'<User {self.username}>'
+#   def __repr__(self):
+#     return f'<User {self.username}>'
 
 # Posts Model
 
@@ -34,9 +34,9 @@ posts = [
 
 @app.route('/')
 def index():
-  users = User.query.all()
-  return render_template('home.html', users = users)
-  # return render_template('home.html', posts=posts)
+  # users = User.query.all()
+  # return render_template('home.html', users = users)
+  return render_template('home.html', posts=posts)
 
 @app.route('/post/<int:post_id>')
 def post(post_id):
